@@ -72,8 +72,13 @@ url &lt;- &quot;https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2Factivity.
 if (!file.exists(&quot;activity.csv&quot;)) {
         download.file(url, destfile = &quot;activity.zip&quot;, method=&quot;curl&quot;)
         unzip(&quot;activity.zip&quot;)
-}
-data=read.csv(&quot;activity.csv&quot;)
+}</code></pre>
+<pre><code>## Warning: running command 'curl
+## &quot;https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2Factivity.zip&quot; -o
+## &quot;activity.zip&quot;' had status 127</code></pre>
+<pre><code>## Warning in download.file(url, destfile = &quot;activity.zip&quot;, method = &quot;curl&quot;):
+## download had nonzero exit status</code></pre>
+<pre class="r"><code>data=read.csv(&quot;activity.csv&quot;)
 
 ##2.Process/transform the data (if necessary) into a format suitable for your analysis.
 str(data)</code></pre>
