@@ -5,7 +5,7 @@ output: html_document
 
 ##Loading and preprocessing the data
 
-```{r,echo=TRUE,fig.show='asis'}
+```{r,echo=TRUE,fig.show="asis"}
 ##1.Show any code that is needed to load the data.
 library(knitr)
 url <- "https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2Factivity.zip"
@@ -24,7 +24,7 @@ head(data)
 
 For this part of the assignment, you can ignore the missing values in the dataset.
 
-```{r,echo=TRUE,fig.show='asis'}
+```{r,echo=TRUE,fig.show="asis"}
 ##1.Make a histogram of the total number of steps taken each day.
 data1<-na.omit(data)
 TotlSteps <- aggregate(data1[1],by=data1[2],FUN=sum)
@@ -41,7 +41,7 @@ median(TotlSteps$steps)
 
 ##What is the average daily activity pattern?
 
-```{r,echo=TRUE,fig.show='asis'}
+```{r,echo=TRUE,fig.show="asis"}
 ##Make a time series plot (i.e. type = "l") of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all days (y-axis)
 StepsInterval=aggregate(data1[1],by=data1[3],FUN=mean)
 plot(StepsInterval$interval, StepsInterval$steps, type='l', 
@@ -58,14 +58,14 @@ StepsInterval$interval[which.max(StepsInterval$steps)]
 
 Note that there are a number of days/intervals where there are missing values (coded as NA). The presence of missing days may introduce bias into some calculations or summaries of the data.
 
-```{r,echo=TRUE}
+```{r,echo=TRUE,fig.show="asis"}
 ##1.Calculate and report the total number of missing values in the dataset (i.e. the total number of rows with NA's)
 sum(is.na(data$steps))
 ```
 
 **So the total number of rows with NA's is 2304.**
 
-```{r,echo=TRUE,fig.show='asis'}
+```{r,echo=TRUE,fig.show="asis"}
 ##2.Devise a strategy for filling in all of the missing values in the dataset. The strategy does not need to be sophisticated. 
 
 ##I choose to use the meanthe mean for that 5-minute interval.
@@ -98,7 +98,7 @@ hist(TotlSteps2$steps,
 
 For this part the weekdays() function may be of some help here. Use the dataset with the filled-in missing values for this part.
 
-```{r,echo=TRUE,fig.show='asis'}
+```{r,echo=TRUE,fig.show="asis"}
 ##Create a new factor variable in the dataset with two levels -- "weekday" and "weekend" indicating whether a given date is a weekday or weekend day.
 
 data1$date <- as.Date(data1$date, "%Y-%m-%d")
