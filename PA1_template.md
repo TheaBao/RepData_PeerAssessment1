@@ -1,6 +1,9 @@
 ---
 title: "RepData_PeerAssessment1"
-output: html_document
+output:
+  html_document:
+    keep_md: yes
+    toc: yes
 ---
 
 ##Loading and preprocessing the data
